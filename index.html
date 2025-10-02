@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hadagasma - BNS Live in Malaysia | Updated Proposal (Gold Theme)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f8f9fa; }
+    .container { max-width: 1200px; margin: 0 auto; background: #fff; }
+
+    /* Letterhead */
+    .letterhead { background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%); padding: 30px 40px; position: relative; overflow: hidden; }
+    .letterhead::after { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: linear-gradient(135deg, transparent 0%, #d4a015 100%); clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%); }
+    .letterhead-content { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .logo-text { color: #fff; font-size: 2em; font-weight: 800; letter-spacing: .5px; }
+    .logo-text span { color: #d4a015; }
+    .contact-header { display: flex; gap: 30px; color: #fff; font-size: .9em; flex-wrap: wrap; }
+    .contact-item { display: flex; align-items: center; gap: 8px; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%); color: #fff; padding: 80px 40px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: radial-gradient(circle, rgba(212,160,21,.1) 0%, transparent 70%); }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 3.4em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,.3); background: linear-gradient(135deg, #fff 0%, #d4a015 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero h2 { font-size: 2em; color: #fff; margin-bottom: 20px; border: none; }
+    .subtitle { font-size: 1.25em; color: #d4a015; opacity: .95; }
+
+    /* Nav */
+    .nav { background: #2c3544; padding: 15px 40px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,.1); border-top: 3px solid #d4a015; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; justify-content: center; }
+    .nav-links a { color: #fff; text-decoration: none; font-weight: 500; transition: color .3s, border .3s; padding: 5px 10px; border-bottom: 2px solid transparent; }
+    .nav-links a:hover { color: #d4a015; border-bottom-color: #d4a015; }
+
+    /* Sections */
+    section { padding: 60px 40px; border-bottom: 1px solid #e0e0e0; }
+    section:nth-child(even) { background: #f8f9fa; }
+    h2 { font-size: 2.5em; color: #2c3544; margin-bottom: 30px; border-bottom: 3px solid #d4a015; padding-bottom: 10px; display: inline-block; }
+    h3 { font-size: 1.8em; color: #2c3544; margin: 30px 0 15px; }
+    h4 { font-size: 1.25em; color: #2c3544; margin: 18px 0 10px; }
+    p, li { margin-bottom: 12px; font-size: 1.05em; }
+    ul { margin-left: 30px; }
+
+    /* Grids */
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+    .info-card { background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,.08); border-top: 4px solid #d4a015; transition: transform .3s; }
+    .info-card:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(212,160,21,.2); }
+
+    /* Highlight */
+    .highlight-box { background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%); border-left: 5px solid #d4a015; padding: 22px; margin: 22px 0; border-radius: 6px; }
+    .key-message { background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%); color: #d4a015; padding: 18px; border-radius: 10px; font-size: 1.15em; font-weight: 700; margin: 16px 0; box-shadow: 0 4px 15px rgba(0,0,0,.15); border: 2px solid #d4a015; }
+    .accent-text { color: #d4a015; font-weight: 700; }
+
+    /* Tables */
+    .budget-table { width: 100%; border-collapse: collapse; margin: 26px 0; box-shadow: 0 2px 15px rgba(0,0,0,.1); }
+    .budget-table th { background: #2c3544; color: #fff; padding: 14px; text-align: left; font-size: 1.05em; border-bottom: 3px solid #d4a015; }
+    .budget-table td { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+    .budget-table tr:hover { background: #fffbf0; }
+    .budget-table .total-row { background: #2c3544; color: #fff; font-weight: bold; font-size: 1.1em; }
+    .budget-table .total-row td { border-bottom: 3px solid #d4a015; }
+
+    /* Sponsor cards */
+    .sponsor-tier { background: #fff; border: 2px solid #ddd; border-radius: 10px; padding: 25px; margin: 18px 0; transition: all .3s; }
+    .sponsor-tier:hover { border-color: #d4a015; box-shadow: 0 5px 20px rgba(212,160,21,.3); }
+    .sponsor-tier.platinum { border-color: #e5e4e2; background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%); border-width: 3px; }
+    .sponsor-tier.gold { border-color: #d4a015; background: linear-gradient(135deg, #fffef5 0%, #ffffff 100%); border-width: 3px; }
+    .sponsor-tier.silver { border-color: #c0c0c0; background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); }
+    .sponsor-tier.bronze { border-color: #cd7f32; background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%); }
+    .tier-header { font-size: 1.6em; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color: #2c3544; }
+    .tier-price { color: #d4a015; font-weight: 800; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%); color: #fff; text-align: center; padding: 60px 40px; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; bottom: 0; left: 0; width: 70%; height: 100%; background: linear-gradient(135deg, #d4a015 0%, transparent 100%); clip-path: polygon(0 0, 100% 100%, 0 100%); opacity: .1; }
+    .cta-section h2 { color: #fff; border: none; }
+    .footer-band { background: linear-gradient(90deg, #d4a015 0%, #2c3544 100%); height: 8px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2em; }
+      section { padding: 40px 20px; }
+      h2 { font-size: 2em; }
+      .nav { padding: 15px 20px; }
+      .letterhead { padding: 20px; }
+      .contact-header { font-size: .85em; }
+    }
+  
+    /* Gallery */
+    .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 22px 0; }
+    .image-card { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,.08); background:#fff; }
+    .image-card img { width:100%; height:auto; display:block; }
+
+    /* Timeline */
+    .timeline { position: relative; padding: 10px 0; }
+    .timeline-item { background:#fff; border-left:4px solid #d4a015; padding: 16px 24px; margin: 16px 0; border-radius:6px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+    .timeline-item h4 { margin-top:0; color:#2c3544; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Letterhead -->
+    <div class="letterhead">
+      <div class="letterhead-content">
+        <div class="logo-text">AURIC <span>ENTERTAINMENT</span></div>
+        <div class="contact-header">
+          <div class="contact-item">📧 info@auricentertainment.my</div>
+          <div class="contact-item">📞 +60-176 768 436</div>
+          <div class="contact-item">🌐 www.auricentertainment.my</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>හදගැස්ම</h1>
+        <h2>Bathiya & Santhush Live in Malaysia</h2>
+        <p class="subtitle">A CSR Initiative to Support Maharagama Apeksha Hospital, Sri Lanka</p>
+        <p style="margin-top: 20px; font-size: 1.15em;">2nd May 2026 | Kuala Lumpur</p>
+      </div>
+    </header>
+
+    <!-- Nav -->
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#event-details">Event Details</a></li>
+        <li><a href="#objectives">Objectives</a></li>
+        <li><a href="#audience">Audience</a></li>
+        <li><a href="#marketing">Marketing</a></li>
+        <li><a href="#csr">CSR</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+		<li><a href="#ticketing-policy">Ticketing Policy</a></li>
+		<li><a href="#security-plans">Security & Safety Plan</a></li>
+        <li><a href="#budget">Budget</a></li>
+        <li><a href="#sponsors">Sponsorship</a></li>
+        <li><a href="#launch">Launch</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#summary">Financial Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Intro -->
+    <section id="introduction">
+            <h2>Introduction</h2>
+            <p><span class="accent-text">Auric Entertainment (Malaysia)</span> is honoured to present <strong>"Hadagasma – Bathiya & Santhush Unplugged Concert in Malaysia"</strong>, featuring Sri Lanka's most iconic musical duo Bathiya & Santhush (BNS).</p>
+            
+            <p>For over two decades, BNS has redefined Sri Lankan music by blending Sinhala, Tamil, English, and Hindi influences, becoming pioneers in the South Asian music industry. Their performances have mesmerized audiences worldwide, and they are celebrated for their ability to bring together diverse communities through music.</p>
+            
+            <div class="highlight-box">
+                <strong>Historic Milestone:</strong> This will be the <strong>first full BNS concert ever held in Malaysia</strong>, exclusively for the Sri Lankan and South Asian community.
+            </div>
+            
+            <p>Beyond entertainment, this event carries a deeper purpose. Organized as a <strong>CSR initiative</strong>, all profits will be donated to the <strong>Maharagama Apeksha Hospital</strong> in Sri Lanka, making this concert a cultural celebration with a lasting humanitarian impact.</p>
+        </section>
+
+    <!-- Details -->
+    <section id="event-details">
+      <h2>Event Details</h2>
+      <div class="info-grid">
+        <div class="info-card"><h4>Date</h4><p><span class="accent-text">2nd May 2026</span></p></div>
+        <div class="info-card"><h4>Time</h4><p><span class="accent-text">6:00 PM – 10:00 PM</span></p></div>
+        <div class="info-card"><h4>Expected Audience</h4><p><span class="accent-text">1000+ attendees</span></p></div>
+        <div class="info-card"><h4>Community</h4><p><span class="accent-text">Sri Lankan & South Asian</span></p></div>
+      </div>
+
+      <h3>Venue Options</h3>
+      <div class="info-grid">
+        <div class="info-card"><h4>Option A: World Trade Centre (WTC)</h4><p>Convention Centre, Kuala Lumpur – premium, large-scale venue for international concerts.</p></div>
+        <div class="info-card"><h4>Option B: Zepp Kuala Lumpur</h4><p>Modern concert hall with excellent acoustics and facilities.</p></div>
+      </div>
+    </section>
+
+    <!-- Objectives -->
+    <section id="objectives">
+            <h2>Objectives of the Event</h2>
+            
+            <h3>1. Strengthen Bilateral & Cultural Relations</h3>
+            <ul>
+                <li>To celebrate Sri Lanka's rich musical heritage in Malaysia and foster stronger cultural and diplomatic ties between the two nations.</li>
+                <li>To position Sri Lanka's modern music industry on an international platform, showcasing it to both Sri Lankans and the wider multicultural audience in Malaysia.</li>
+            </ul>
+            
+            <h3>2. Unite the Sri Lankan Expatriate Community</h3>
+            <ul>
+                <li>To bring together Sri Lankans living in Malaysia and Singapore under one cultural roof.</li>
+                <li>To promote a sense of unity, identity, and pride within the expatriate community while keeping them connected to their homeland.</li>
+            </ul>
+            
+            <h3>3. Support a Meaningful Cause (CSR Impact)</h3>
+            <ul>
+                <li>To donate concert profits to the Apeksha Hospital, Maharagama in Sri Lanka, directly contributing to cancer treatment facilities, research, and patient care.</li>
+                <li>To set an example of how Sri Lankan artists and communities abroad can collectively support the nation's healthcare system.</li>
+            </ul>
+            
+            <h3>4. Promote Youth & Student Engagement</h3>
+            <ul>
+                <li>To encourage participation from the younger generation by offering a special student instalment ticket plan.</li>
+                <li>To inspire youth to engage in both cultural appreciation and social responsibility.</li>
+            </ul>
+            
+            <h3>5. Establish Malaysia as a Cultural Hub for Sri Lankans</h3>
+            <ul>
+                <li>To create a landmark event that positions Malaysia as a regional hub for Sri Lankan cultural activities.</li>
+                <li>To lay the foundation for future cultural, musical, and CSR collaborations between Sri Lankans in Malaysia and beyond.</li>
+            </ul>
+        </section>
+
+    <!-- Audience -->
+    <section id="audience">
+      <h2>Target Audience</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h4>Primary Audience</h4>
+          <p><strong>Sri Lankan expatriates in Malaysia</strong></p>
+          <ul><li>Kuala Lumpur</li><li>Selangor</li><li>Penang</li><li>Johor</li></ul>
+        </div>
+        <div class="info-card">
+          <h4>Secondary Audience</h4>
+          <p><strong>Sri Lankan & South Asian expatriates in Singapore</strong></p>
+          <p>Significant community that can travel to Malaysia for this landmark event.</p>
+        </div>
+        <div class="info-card">
+          <h4>Tertiary Audience</h4>
+          <p><strong>Broader South Asian music enthusiasts</strong></p>
+          <ul><li>Tamil music fans</li><li>Hindi music fans</li><li>Sinhala music fans</li></ul>
+        </div>
+      </div>
+      <div class="highlight-box">This multi‑tier approach ensures broad reach while keeping the event's Sri Lankan cultural identity.</div>
+    </section>
+
+    <!-- Marketing -->
+    <section id="marketing">
+            <h2>Marketing & Promotional Strategy</h2>
+            
+            <div class="key-message">
+                "First Ever Full BNS Concert in Malaysia"
+            </div>
+            <div class="key-message">
+                "Every Ticket Saves Lives – CSR for Apeksha Hospital, Maharagama"
+            </div>
+            <div class="key-message">
+                "Uniting Sri Lankans in Malaysia & Singapore through Music"
+            </div>
+            
+            <h3>1. Digital & Social Media</h3>
+            
+            <h4>Facebook & Instagram Campaigns</h4>
+            <ul>
+                <li>Targeted advertising focused on Sri Lankan diaspora in Malaysia & Singapore</li>
+                <li>Boosted ads in community groups: Sri Lankan Expat Malaysia, Sri Lankan Association Singapore, Tamil and South Asian cultural groups</li>
+                <li>Content strategy: Countdown posts, teaser videos, and artist shoutouts from BNS</li>
+                <li>Interactive engagement through polls, Q&A sessions, and giveaways</li>
+            </ul>
+            
+            <h4>TikTok Reels & YouTube Shorts</h4>
+            <ul>
+                <li>Leverage trending Sri Lankan and South Asian music hashtags</li>
+                <li>Behind-the-scenes clips showcasing concert preparation</li>
+                <li>Past concert highlights demonstrating BNS's electrifying performances</li>
+                <li>CSR-focused content with the "Save 1000 Lives" message</li>
+                <li>User-generated content campaigns encouraging fans to share their BNS memories</li>
+            </ul>
+            
+            <h4>WhatsApp & Telegram Broadcasting</h4>
+            <ul>
+                <li>Share ticketing posters in Sri Lankan community chat groups</li>
+                <li>Partner with Sri Lankan restaurants, shops, and student unions to forward promotional flyers</li>
+                <li>Create dedicated broadcast channels for event updates and announcements</li>
+                <li>Direct communication with community leaders for grassroots promotion</li>
+            </ul>
+            
+            <h3>2. Community Engagement</h3>
+            
+            <h4>Student Association Partnerships</h4>
+            <ul>
+                <li>Tie-ups with Sri Lankan Student Associations in Malaysia (University of Malaya, Taylor's, Sunway) and Singapore (NUS, NTU)</li>
+                <li>Offer exclusive group packages and student discounts</li>
+                <li>Campus activation events and ticket sale booths</li>
+                <li>Student ambassador programs for peer-to-peer marketing</li>
+            </ul>
+            
+            <h4>Religious and Community Centers</h4>
+            <ul>
+                <li>Collaborations with Sri Lankan temples, churches, and community centers</li>
+                <li>Announcements during community gatherings and cultural events</li>
+                <li>Poster displays and ticket collection points</li>
+            </ul>
+            
+            <h4>Business Partnerships</h4>
+            <ul>
+                <li>Partner with Sri Lankan restaurants and grocery stores throughout Malaysia</li>
+                <li>Table-top promotions, flyers, and ticket sale QR codes at point-of-sale</li>
+                <li>Co-branding opportunities with established Sri Lankan businesses</li>
+            </ul>
+            
+            <h3>3. Media & Press</h3>
+            
+            <h4>Sri Lankan Media Coverage</h4>
+            <ul>
+                <li>Major outlets: TV Derana, Hiru TV, Sirasa TV, Lankadeepa Online</li>
+                <li>Feature articles, interviews with organizers and BNS (via video call)</li>
+                <li>Live coverage announcements and concert previews</li>
+            </ul>
+            
+            <h4>Local Malaysian/Singaporean Media</h4>
+            <ul>
+                <li>Tamil and South Asian radio partnerships: Minnal FM, Oli 96.8 FM, Raaga FM</li>
+                <li>Radio interviews, spot announcements, and promotional segments</li>
+                <li>Online articles in Malaysian and Singaporean Tamil news portals</li>
+            </ul>
+            
+            <h3>4. CSR-Driven PR</h3>
+            
+            <h4>Emotional Storytelling</h4>
+            <ul>
+                <li>Promote the message that every ticket directly contributes to saving lives</li>
+                <li>Feature survivor stories from Maharagama Apeksha Hospital</li>
+                <li>Personal video messages from BNS about why this cause matters</li>
+                <li>Documentary-style content showing the hospital's work and impact</li>
+            </ul>
+            
+            <h4>Credibility Building</h4>
+            <ul>
+                <li>Press launch event (November 2025) with Sri Lankan High Commission in Malaysia</li>
+                <li>Official endorsements and messages from diplomatic representatives</li>
+                <li>Transparency in fund allocation and CSR impact reporting</li>
+            </ul>
+            
+            <h3>5. Singapore-Specific Outreach</h3>
+            
+            <h4>Travel + Concert Packages</h4>
+            <ul>
+                <li>Collaboration with travel agents and bus companies for hassle-free transportation</li>
+                <li>All-inclusive packages: transport + ticket + dinner options</li>
+                <li>Group booking incentives for Singapore-based communities</li>
+            </ul>
+            
+            <h4>Targeted Digital Campaigns</h4>
+            <ul>
+                <li>Facebook and Instagram ads specifically targeting Singapore Sri Lankan community groups</li>
+                <li>Geo-targeted promotions in Singapore's key Sri Lankan residential areas</li>
+            </ul>
+            
+            <h4>Association Partnerships</h4>
+            <ul>
+                <li>Official tie-up with Sri Lankan Association of Singapore</li>
+                <li>Coordinated ticket sales through association channels</li>
+                <li>Joint promotional events and community gatherings in Singapore</li>
+            </ul>
+            
+            <h3>Marketing Timeline</h3>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>November 2025 (Launch Phase)</h4>
+                    <ul>
+                        <li>Press conference with Sri Lankan High Commission</li>
+                        <li>Official website launch</li>
+                        <li>Ticketing platform goes live</li>
+                        <li>Initial social media campaign rollout</li>
+                        <li>Early bird ticket promotion begins</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>December 2025 – February 2026 (Awareness & Engagement)</h4>
+                    <ul>
+                        <li>Full-scale digital advertising campaigns</li>
+                        <li>Student association partnerships activated</li>
+                        <li>Sponsor brand integration and co-marketing</li>
+                        <li>Community center and religious institution outreach</li>
+                        <li>Media interviews and feature articles</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>March 2026 – April 2026 (Acceleration Phase)</h4>
+                    <ul>
+                        <li>Heavy social media push with daily content</li>
+                        <li>BNS video promotions and artist messages</li>
+                        <li>Early bird ticket deadline (create urgency)</li>
+                        <li>Intensified Singapore promotions</li>
+                        <li>Influencer takeovers and collaborations</li>
+                        <li>Radio spot increases</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>May 2026 (Concert Month - Final Push)</h4>
+                    <ul>
+                        <li>Daily countdown posts across all platforms</li>
+                        <li>Media reminders and final interview rounds</li>
+                        <li>Influencer and blogger coverage</li>
+                        <li>Last-chance ticket promotions</li>
+                        <li>Live updates and behind-the-scenes content</li>
+                        <li>Day-of-event social media coverage</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    <!-- CSR -->
+    <section id="csr">
+            <h2>CSR & Social Impact</h2>
+            
+            <p>This concert is not just a musical celebration—it is a <strong>charitable initiative with long-lasting social value</strong>.</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Direct Benefit to Sri Lanka</h4>
+                    <p>All net profits from the event will be donated to the Maharagama Apeksha Hospital, the country's leading national cancer treatment facility. This contribution will support patient care, advanced treatment facilities, and medical equipment.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Community-Driven CSR</h4>
+                    <p>By bringing together the Sri Lankan expatriate community in Malaysia and Singapore, the concert transforms entertainment into an opportunity for collective social responsibility. Every ticket purchased directly contributes to saving lives in Sri Lanka.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Raising Awareness</h4>
+                    <p>Beyond financial support, the event raises awareness within the diaspora about the importance of contributing back to national causes, encouraging solidarity and shared responsibility.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Cultural Diplomacy</h4>
+                    <p>The concert also stands as a bridge of goodwill, showcasing how Sri Lankan culture and music can serve as a platform for humanitarian impact, strengthening both Sri Lanka's image abroad and its bonds with Malaysia.</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>In essence, this project goes beyond music—it combines culture, compassion, and community, leaving a lasting legacy for both Sri Lankans abroad and those in need at home.</strong></p>
+            </div>
+        </section>
+
+    
+
+    <!-- Tickets -->
+    <section id="tickets">
+            <h2>Ticketing Plan</h2>
+            
+            <p>Our ticketing structure has been designed to ensure <strong>inclusivity, affordability, and maximum participation</strong> from the Sri Lankan and South Asian communities in Malaysia and Singapore.</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>VIP Tickets</h4>
+                    <p><span class="accent-text">RM 500 | 50 seats only</span></p>
+                    <ul>
+                        <li>Exclusive VIP Zone right at the stage (reserved front standing area)</li>
+                        <li>Priority entry</li>
+						<li>Meet & Greet with BNS</li>
+						<li>Limited-edition merchandise</li>
+						<li>Vehicle pass access </li>
+						<li>VIP lounge access</li>
+						<li>Complimentary one cocktail or beer</li>
+                        <li>Recognition as premium CSR supporters</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Premium Tickets</h4>
+                    <p><span class="accent-text">RM 300 | 200 seats only</span></p>
+                    <ul>
+                        <li>Standard admission for main audience</li>
+                        <li>Balanced pricing for maximum participation</li>
+                    </ul>
+                </div>
+				
+				 <div class="info-card">
+                    <h4>Entrance Tickets</h4>
+                    <p><span class="accent-text">RM 300 | 50 seats only</span></p>
+                    <ul>
+						<li>Available at Main Gate Counter on concert day</li>
+                        <li>Cash, Card & eWallet accepted</li>
+                        <li>Limited availability — first-come-first-served</li>
+						<li>Gate opens at 5:00 PM, ticket valid for same-day entry only</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Early Bird Tickets</h4>
+                    <p><span class="accent-text">RM 250 | 50 seats only</span></p>
+                    <ul>
+                        <li>Available from 25th November 2025</li>
+                        <li>Limited time offer</li>
+                        <li>Designed to generate early excitement</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Exclusive Offer</h4>
+					<p><span class="accent-text">RM 250  | 300 seats only</span></p>
+                    <ul>
+                        <li>Available from 1st week of April 2026</li>
+                        <li>Limited time offer</li>
+                        <li>New Year and Hari Raya offer</li>
+                    </ul>
+                </div>
+				<div class="info-card">
+                    <h4>Student Plan</h4>
+					<p><span class="accent-text">RM 200 | 200 seats only<span></p>
+                    <ul>
+						<li>3-Month Instalment Option</li>
+                        <li>Financially accessible to youth</li>
+                        <li>Encourages younger generation participation</li>
+                        <li>Combines culture with charity</li>
+                    </ul>
+                </div>
+				<div class="info-card">
+                    <h4>General Standing</h4>
+					<p><span class="accent-text">RM 150 | 150 tickets only<span></p>
+                    <ul>
+                       <li> Open standing area access</li>
+						<li>Affordable option for wider participation </li>
+						<li>Tickets available online & at gate (subject to availability) </li>
+						<li>Perfect for students, friends & group attendees </li>
+                    </ul>
+                </div>
+				
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Target: 1000+ attendees</strong> - This tiered strategy ensures fair access across different income groups within the expatriate community.</p>
+            </div>
+        </section>
+		
+		<section id="ticketing-policy">
+  <h2>Ticketing Policy</h2>
+  <ul>
+    <li><strong>Refunds & Cancellations:</strong> Tickets are non-refundable except in case of full event cancellation.</li>
+    <li><strong>Gate Opening:</strong> Gates open at 5:00 PM. All guests must arrive early for security checks.</li>
+    <li><strong>Age Restrictions:</strong> Entry is allowed for ages 12 and above. Children under 16 must be accompanied by an adult.</li>
+    <li><strong>Re-entry Policy:</strong> Once exited, re-entry will not be permitted.</li>
+  </ul>
+</section>
+
+<section id="security-plans">
+  <h2>Security & Safety Plan</h2>
+  <ul>
+    <li>Professional security team deployed across venue entry and exit points</li>
+    <li>Emergency medical staff on-site with first aid facilities</li>
+    <li>Collaboration with local police and authorities for crowd management</li>
+    <li>Evacuation protocols and fire safety compliance as per Malaysian standards</li>
+    <li>COVID-19 or other health compliance as required by authorities</li>
+  </ul>
+</section>
+
+
+    <!-- Budget -->
+    <section id="budget">
+      <h2>Budget & Revenue</h2>
+	  <p>To ensure the success of Hadagasma – Bathiya & Santhush Unplugged Concert Live in Malaysia, we invite sponsorships from businesses and well-wishers. Sponsorships will not only support the event financially but also give companies strong exposure to the Sri Lankan and South Asian community in Malaysia and Singapore.</p>
+      <h3>Total Budget Breakdown</h3>
+      <table class="budget-table">
+        <thead><tr><th>Item</th><th>Cost (RM)</th></tr></thead>
+        <tbody>
+          <tr><td>Artist Charges</td><td>52,000</td></tr>
+          <tr><td>Venue Rental</td><td>50,000</td></tr>
+          <tr><td>Sound, Lights & Instruments</td><td>60,000</td></tr>
+          <tr><td>Accommodation</td><td>15,000</td></tr>
+          <tr><td>Performance Visa Charges</td><td>10,000</td></tr>
+          <tr><td>Air Tickets</td><td>25,000</td></tr>
+          <tr><td>MPK & Other Licenses</td><td>15,000</td></tr>
+          <tr><td>Transportation</td><td>5,000</td></tr>
+          <tr><td>Food & Beverages</td><td>10,000</td></tr>
+          <tr><td>Ticket & Flyer Printing</td><td>10,000</td></tr>
+          <tr><td>Security & Staff Payments</td><td>4,000</td></tr>
+          <tr><td>Marketing & Promotion (Digital + PR)</td><td>1,500</td></tr>
+          <tr><td><strike>Photography & Videography</strike></td><td>7,000</td></tr>
+          <tr><td>Insurance & Permits</td><td>8,000</td></tr>
+          <tr class="total-row"><td>Subtotal</td><td>272,000</td></tr>
+          <tr><td>Contingency / Buffer</td><td>25,000</td></tr>
+          <tr class="total-row"><td>TOTAL</td><td>297,000</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Ticket Revenue Projection</h3>
+      <table class="budget-table">
+        <thead><tr><th>Ticket Category</th><th>Quantity</th><th>Price (RM)</th><th>Revenue (RM)</th></tr></thead>
+        <tbody>
+          <tr><td>VIP Tickets</td><td>50</td><td>500</td><td>25,000</td></tr>
+          <tr><td>Premium Tickets</td><td>200</td><td>300</td><td>60,000</td></tr>
+          <tr><td>Early Bird Tickets</td><td>50</td><td>250</td><td>12,500</td></tr>
+          <tr><td>Student Plan</td><td>200</td><td>200</td><td>40,000</td></tr>
+		  <tr><td>Entrance Tickets</td><td>50</td><td>300</td><td>15,000</td></tr>
+		  <tr><td>General Standing</td><td>150</td><td>150</td><td>22,500</td></tr>
+		  <tr><td>Exclusive Offer</td><td>300</td><td>250</td><td>75,000</td></tr>
+          <tr class="total-row"><td colspan="3">Total Ticket Sales (1000 pax)</td><td>250,000</td></tr>
+		  <tr><td>PUSPAL Levy (12% of ticket sales)</td><td colspan='2'>-</td><td>30,000</td></tr>
+		  <tr class="total-row"><td colspan='3'>Net Ticket Revenue After PUSPAL</td><td>220,000</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Sponsorship Revenue Target</h3>
+      <table class="budget-table">
+        <thead><tr><th>Tier</th><th>Qty</th><th>Target Price (RM)</th><th>Revenue (RM)</th></tr></thead>
+        <tbody>
+          <tr><td>Platinum</td><td>1</td><td>50,000</td><td>50,000</td></tr>
+          <tr><td>Gold</td><td>2</td><td>30,000</td><td>60,000</td></tr>
+          <tr><td>Silver</td><td>3</td><td>20,000</td><td>60,000</td></tr>
+          <tr><td>Bronze</td><td>6</td><td>15,000</td><td>90,000</td></tr>
+          <tr class="total-row"><td colspan="3">Total from Sponsors (Target)</td><td>260,000</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.95em;color:#555">Note: Bronze tier ranges RM 10k–15k each; in‑kind partners are tracked separately.</p>
+    </section>
+
+    <!-- Sponsorship -->
+    <section id="sponsors">
+      <h2>Sponsorship Opportunities</h2>
+      <div class="highlight-box"><strong>CSR Alignment:</strong> Sponsors gain strong brand visibility while contributing to a healthcare cause.</div>
+
+      <div class="sponsor-tier platinum">
+        <div class="tier-header"><span>💎 Platinum Sponsor — Exclusive Title Partner</span><span class="tier-price">RM 50,000 × 1</span></div>
+        <ul>
+          <li>Exclusive Title: “Hadagasma 2026 presented by [Brand]”</li>
+          <li>Category exclusivity (bank/telecom/airline etc.)</li>
+          <li>Premium logo on stage, tickets, press & digital</li>
+          <li>Full-page ad in souvenir/digital program</li>
+          <li>VIP table (10 seats) + backstage meet & greet with BNS</li>
+          <li>On-stage acknowledgement + corporate booth/activation zone</li>
+        </ul>
+      </div>
+
+      <div class="sponsor-tier gold">
+        <div class="tier-header"><span>🥇 Gold Sponsor</span><span class="tier-price">RM 30,000 × 2</span></div>
+        <ul>
+          <li>Prominent logo across digital & print promotions</li>
+          <li>Half-page ad in program</li>
+          <li>6 VIP seats + photo opportunity with BNS</li>
+          <li>Press & social media recognition</li>
+          <li>On-screen logo before/after performance</li>
+        </ul>
+      </div>
+
+      <div class="sponsor-tier silver">
+        <div class="tier-header"><span>🥈 Silver Sponsor</span><span class="tier-price">RM 20,000 × 3</span></div>
+        <ul>
+          <li>Logo on banners, flyers & social media</li>
+          <li>Quarter-page ad in program</li>
+          <li>4 VIP seats</li>
+          <li>Logo on venue LED screens during intermissions</li>
+          <li>Acknowledged as Silver Sponsor</li>
+        </ul>
+      </div>
+
+      <div class="sponsor-tier bronze">
+        <div class="tier-header"><span>🥉 Bronze Sponsor</span><span class="tier-price">RM 10,000–15,000 × 5–6</span></div>
+        <ul>
+          <li>Logo on selected materials & social campaigns</li>
+          <li>Mention in souvenir/digital program</li>
+          <li>2 VIP seats</li>
+          <li>Verbal appreciation during event</li>
+        </ul>
+      </div>
+
+      <div class="sponsor-tier">
+        <div class="tier-header"><span>🤝 Supporting Partner (Cash or In‑Kind)</span><span class="tier-price">RM 5,000+ (variable)</span></div>
+        <ul>
+          <li>Ideal for printing, hospitality, logistics, accommodation, F&B</li>
+          <li>Logo placement as “Supporting Partner”</li>
+          <li>Social media mentions and community recognition</li>
+        </ul>
+      </div>
+	  <div class="sponsor-tier">
+  <div class="tier-header"><span>🌟 Community Sponsor</span><span class="tier-price">RM 8,000 × Multiple</span></div>
+  <ul>
+    <li>Logo on community-focused promotions</li>
+    <li>2 Complimentary Student Plan tickets</li>
+    <li>Special mention on social media</li>
+  </ul>
+</div>
+
+    </section>
+
+    <!-- Launch -->
+    <section id="launch">
+      <h2>Event Launch</h2>
+      <p>The official launch is scheduled for <strong>25th November 2025</strong>.</p>
+      <div class="info-grid">
+        <div class="info-card"><h4>Press & Media Conference</h4><p>Introduce the concert & CSR initiative; Q&A with media.</p></div>
+        <div class="info-card"><h4>Website Launch</h4><p>Event website with details, ticketing and sponsorship info.</p></div>
+        <div class="info-card"><h4>Ticket Sales Opening</h4><p>VIP, Regular, Early Bird & Student instalments go on sale.</p></div>
+        <div class="info-card"><h4>Community Engagement</h4><p>Invites to Sri Lankan associations & student groups.</p></div>
+      </div>
+      <div class="highlight-box">
+        <h4>Chief Guest</h4>
+        <p>Invitation to <strong>H.E. the Ambassador/High Commissioner of Sri Lanka to Malaysia</strong> as Chief Guest.</p>
+        <p><em>(Time and location to be announced)</em></p>
+      </div>
+	  
+	  <div class="highlight-box info-card">
+  <h4>Sponsor Recognition</h4>
+  <p>All sponsors will be formally introduced during the launch event with logo displays, media mentions, and dedicated acknowledgements.</p>
+</div>
+
+    </section>
+	
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Event Visuals</h2>
+      <div class="image-gallery">
+        <div class="image-card"><img src="https://scontent.fkul8-4.fna.fbcdn.net/v/t39.30808-6/536681380_1343170507170720_240555258967416496_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_ohc=Cmjh1Vp7-YYQ7kNvwGe4J9x&_nc_oc=Adlpoz9knnFaNJfGaFPNjV9AUbGcDh59172RSx9H7XpNXXYBtyQ4wRAsPR04OsaqfEg&_nc_zt=23&_nc_ht=scontent.fkul8-4.fna&_nc_gid=mkpGg8fQe7ZdOz72c2iyCA&oh=00_AfaiO7KgFRkoKxcMOEEhWqbj-x0nH_yL4YTtRejswLeWig&oe=68E3CD0F" width='600' height='400'%3E%3Crect fill='%232c3544' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23d4a015' font-size='24' font-weight='bold'%3EAuric Letterhead%3C/text%3E%3C/svg%3E" alt="Auric Letterhead"></div>
+        <div class="image-card"><img src="https://scontent.fkul8-2.fna.fbcdn.net/v/t39.30808-6/537075706_1343170700504034_6246208489044174916_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=f727a1&_nc_ohc=MFPMqhytyqwQ7kNvwF3f5LW&_nc_oc=AdmmTenOLo5hBw5C7YQ_NLXrRZWAj4dPmrQKfwJZMFCrwQv2GaGiaTVqxRn2RwVEjR8&_nc_zt=23&_nc_ht=scontent.fkul8-2.fna&_nc_gid=sgD1r8FcyWse3Y5UbT2jQg&oh=00_AfZR27QYAi2A9cdJ7WECJ0OcS_ZWmyFlWGO4-_Z6Hw0vow&oe=68E3ACA8" width='600' height='400'%3E%3Crect fill='%23f0f0f0' width='600' height='400'/%3E%3Crect fill='%232c3544' x='120' y='120' width='360' height='160' rx='10'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23d4a015' font-size='22' font-weight='bold'%3EStage Setup%3C/text%3E%3C/svg%3E" alt="Stage Setup"></div>
+        <div class="image-card"><img src="https://scontent.fkul8-4.fna.fbcdn.net/v/t39.30808-6/537105197_1343170630504041_100497489557592610_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_ohc=Cewr1YMR8WgQ7kNvwHcO3hc&_nc_oc=Adnr6AsVQUHaOLF83i0ixqCRG8vxIhIIff6wQ_xma9s2_wXBqOzardGgeGnhTdX2m8k&_nc_zt=23&_nc_ht=scontent.fkul8-4.fna&_nc_gid=xDmhtY8lEJT1qelrZqxjNg&oh=00_AfZBT5JxLdzqk5G5wrNXWzogM7FM5FZIKcR0xgb0crVlzw&oe=68E3B01F" width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Crect fill='%23d4a015' x='100' y='100' width='400' height='50' rx='5'/%3E%3Crect fill='%232c3544' x='100' y='175' width='400' height='50' rx='5'/%3E%3Crect fill='%23999999' x='100' y='250' width='400' height='50' rx='5'/%3E%3Ctext x='50%25' y='30' text-anchor='middle' fill='%232c3544' font-size='18' font-weight='bold'%3EMaharagama Apeksha Hospital%3C/text%3E%3C/svg%3E" alt="CSR Hospital"></div>
+      </div>
+	  <div class="image-gallery">
+        <div class="image-card"><img src="https://www.ncisl.health.gov.lk/wp-content/uploads/2018/11/004-2.jpg" width='600' height='400'%3E%3Crect fill='%232c3544' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23d4a015' font-size='24' font-weight='bold'%3EAuric Letterhead%3C/text%3E%3C/svg%3E" alt="Auric Letterhead"></div>
+        <div class="image-card"><img src="https://i.ytimg.com/vi/v8eBuLqo4qM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCf_rPOLDq_wz6_HaVVVkEYa4SHxg" width='600' height='400'%3E%3Crect fill='%23f0f0f0' width='600' height='400'/%3E%3Crect fill='%232c3544' x='120' y='120' width='360' height='160' rx='10'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23d4a015' font-size='22' font-weight='bold'%3EStage Setup%3C/text%3E%3C/svg%3E" alt="Stage Setup"></div>
+        <div class="image-card"><img src="https://spmc.gov.lk/resources/253/C1.jpg" width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Crect fill='%23d4a015' x='100' y='100' width='400' height='50' rx='5'/%3E%3Crect fill='%232c3544' x='100' y='175' width='400' height='50' rx='5'/%3E%3Crect fill='%23999999' x='100' y='250' width='400' height='50' rx='5'/%3E%3Ctext x='50%25' y='30' text-anchor='middle' fill='%232c3544' font-size='18' font-weight='bold'%3EMaharagama Apeksha Hospital%3C/text%3E%3C/svg%3E" alt="CSR Hospital"></div>
+      </div>
+      
+    </section>
+
+    <!-- Summary -->
+   <section id="summary">
+   <div class="info-card">
+  <h4>Estimated Net for CSR</h4>
+  <p><strong>~ RM 45,750</strong></p>
+  <p style="font-size:.95em;color:#555">
+    Based on 25% of projected profit (assuming ticket sales + full sponsorship target). 
+    Break-even sponsorship ≈ RM 77,000; CSR donation increases with higher profits.
+  </p>
+</div>
+
+    <!--   <h2>Financial Summary</h2>
+      <div class="info-grid">
+        <div class="info-card"><h4>Total Budget Required</h4><p><strong>RM 297,000</strong></p></div>
+        <div class="info-card"><h4>Ticket Revenue (Projected)</h4><p><strong>RM 220,000</strong></p></div>
+        <div class="info-card"><h4>Target Sponsorship Revenue</h4><p><strong>RM 260,000+</strong></p></div>
+        <div class="info-card"><h4>Estimated Net for CSR</h4><p><strong>~ RM 55,000+</strong></p><p style="font-size:.95em;color:#555">(After costs; increases with higher sponsorships or cost efficiencies)</p></div>
+      </div> -->
+    </section> 
+	
+	
+
+    <!-- Footer -->
+    <footer class="cta-section">
+      <h2>Let's Create Impact Through Music</h2>
+      <div class="contact-info">
+        <p><strong>Auric Entertainment (Malaysia)</strong></p>
+        <p>Sameer Christy — Founder</p>
+        <p>📞 +60-17-600 8436</p>
+        <p>✉️ info@auricentertainment.my</p>
+        <p>🌐 www.auricentertainment.my</p>
+      </div>
+      <div style="margin-top: 18px; font-size: .95em; opacity: .9;">© 2025 Auric Entertainment. All rights reserved.</div>
+    </footer>
+
+    <div class="footer-band"></div>
+  </div>
+</body>
+</html>

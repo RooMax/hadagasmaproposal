@@ -4,486 +4,512 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>හදගැස්ම - BNS Live in Malaysia | AURIC ENTERTAINMENT</title>
+  <title>හදගැස්ම - BNS Live in Malaysia | AURIC ENTERTAINMENT — In Collaboration with Sri Lankan High Commission | CSR:
+    Apeksha Hospital</title>
   <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #ffffff; /* primary text color */
-    background: #000000; /* page background set to black */
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: transparent; /* allow black page background to show */
-  }
-
-  /* Letterhead */
-  .letterhead {
-    background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
-    padding: 30px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .letterhead::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent 0%, #d4a015 100%);
-    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
-  }
-
-  .letterhead-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .logo-text {
-    color: #fff;
-    font-size: 2em;
-    font-weight: 800;
-    letter-spacing: .5px;
-  }
-
-  .logo-text span {
-    color: #d4a015;
-  }
-
-  .contact-header {
-    display: flex;
-    gap: 30px;
-    color: #fff;
-    font-size: .9em;
-    flex-wrap: wrap;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* Hero */
-  .hero {
-    background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
-    color: #fff;
-    padding: 80px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(212, 160, 21, .1) 0%, transparent 70%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero h1 {
-    font-size: 3.4em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
-    background: linear-gradient(135deg, #fff 0%, #d4a015 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero h2 {
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 20px;
-    border: none;
-  }
-
-  .subtitle {
-    font-size: 1.25em;
-    color: #d4a015;
-    opacity: .95;
-  }
-
-  /* Nav */
-  .nav {
-    background: #2c3544;
-    padding: 15px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
-    border-top: 3px solid #d4a015;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    list-style: none;
-    justify-content: center;
-  }
-
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color .3s, border .3s;
-    padding: 5px 10px;
-    border-bottom: 2px solid transparent;
-  }
-
-  .nav-links a:hover {
-    color: #d4a015;
-    border-bottom-color: #d4a015;
-  }
-
-  /* Sections */
-  section {
-    padding: 60px 40px;
-    border-bottom: 1px solid #333; /* darker divider for dark background */
-  }
-
-  section:nth-child(even) {
-    background: transparent; /* keep consistent dark look */
-  }
-
-  h2 {
-    font-size: 2.5em;
-    color: #ffffff;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #d4a015;
-    padding-bottom: 10px;
-    display: inline-block;
-  }
-
-  h3 {
-    font-size: 1.8em;
-    color: #ffffff;
-    margin: 30px 0 15px;
-  }
-
-  h4 {
-    font-size: 1.25em;
-    color: #ffffff;
-    margin: 18px 0 10px;
-  }
-
-  p,
-  li {
-    margin-bottom: 12px;
-    font-size: 1.05em;
-    color: #e6e6e6; /* readable body text on black */
-  }
-
-  ul {
-    margin-left: 30px;
-  }
-
-  /* Grids */
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin: 30px 0;
-  }
-
-  .info-card {
-    background: #0b0b0b; /* dark card background */
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .6);
-    border-top: 4px solid #d4a015;
-    transition: transform .3s;
-    color: #eaeaea;
-  }
-
-  .info-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(212, 160, 21, .12);
-  }
-
-  /* Highlight */
-  .highlight-box {
-    background: linear-gradient(135deg, #111111 0%, #0b0b0b 100%);
-    border-left: 5px solid #d4a015;
-    padding: 22px;
-    margin: 22px 0;
-    border-radius: 6px;
-    color: #f5f5f5;
-  }
-
-  .key-message {
-    background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
-    color: #d4a015;
-    padding: 18px;
-    border-radius: 10px;
-    font-size: 1.15em;
-    font-weight: 700;
-    margin: 16px 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, .6);
-    border: 2px solid #d4a015;
-  }
-
-  .accent-text {
-    color: #d4a015;
-    font-weight: 700;
-  }
-
-  /* Tables */
-  .budget-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 26px 0;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, .6);
-    color: #eaeaea;
-  }
-
-  .budget-table th {
-    background: #2c3544;
-    color: #fff;
-    padding: 14px;
-    text-align: left;
-    font-size: 1.05em;
-    border-bottom: 3px solid #d4a015;
-  }
-
-  .budget-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #222;
-    color: #ddd;
-  }
-
-  .budget-table tr:hover {
-    background: #0f0f0f;
-  }
-
-  .budget-table .total-row {
-    background: #2c3544;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
-
-  .budget-table .total-row td {
-    border-bottom: 3px solid #d4a015;
-  }
-
-  /* Sponsor cards */
-  .sponsor-tier {
-    background: #0b0b0b;
-    border: 2px solid #2b2b2b;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 18px 0;
-    transition: all .3s;
-    color: #eaeaea;
-  }
-
-  .sponsor-tier:hover {
-    border-color: #d4a015;
-    box-shadow: 0 5px 20px rgba(212, 160, 21, .12);
-  }
-
-  .sponsor-tier.platinum {
-    border-color: #e5e4e2;
-    background: linear-gradient(135deg, #0f0f0f 0%, #0b0b0b 100%);
-    border-width: 3px;
-  }
-
-  .sponsor-tier.gold {
-    border-color: #d4a015;
-    background: linear-gradient(135deg, #0f0f05 0%, #0b0b00 100%);
-    border-width: 3px;
-  }
-
-  .sponsor-tier.silver {
-    border-color: #c0c0c0;
-    background: linear-gradient(135deg, #0f0f0f 0%, #0b0b0b 100%);
-  }
-
-  .sponsor-tier.bronze {
-    border-color: #cd7f32;
-    background: linear-gradient(135deg, #0f0b07 0%, #0b0603 100%);
-  }
-
-  .tier-header {
-    font-size: 1.6em;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #ffffff;
-  }
-
-  .tier-price {
-    color: #d4a015;
-    font-weight: 800;
-  }
-
-  /* CTA */
-  .cta-section {
-    background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
-    color: #fff;
-    text-align: center;
-    padding: 60px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 70%;
-    height: 100%;
-    background: linear-gradient(135deg, #d4a015 0%, transparent 100%);
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
-    opacity: .1;
-  }
-
-  .cta-section h2 {
-    color: #fff;
-    border: none;
-  }
-
-  .footer-band {
-    background: linear-gradient(90deg, #d4a015 0%, #2c3544 100%);
-    height: 8px;
-  }
-
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.2em;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    section {
-      padding: 40px 20px;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #ffffff;
+      /* primary text color */
+      background: #000000;
+      /* page background set to black */
     }
 
-    h2 {
-      font-size: 2em;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: transparent;
+      /* allow black page background to show */
     }
 
-    .nav {
-      padding: 15px 20px;
-    }
-
+    /* Letterhead */
     .letterhead {
-      padding: 20px;
+      background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
+      padding: 30px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letterhead::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, #d4a015 100%);
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .letterhead-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .letterhead-content img {
+      vertical-align: middle;
     }
 
     .contact-header {
-      font-size: .85em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
     }
-  }
 
-  /* Gallery */
-  .image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
-    margin: 22px 0;
-  }
+    .logo-text {
+      color: #fff;
+      font-size: 1.5em;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
 
-  .image-card {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .6);
-    background: #0a0a0a;
-  }
+    .logo-text span {
+      color: #d4a015;
+    }
 
-  .image-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .contact-header {
+      display: flex;
+      gap: 30px;
+      color: #fff;
+      font-size: .9em;
+      flex-wrap: wrap;
+      align-items: right;
+    }
 
-  /* Timeline */
-  .timeline {
-    position: relative;
-    padding: 10px 0;
-  }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-  .timeline-item {
-    background: #0b0b0b;
-    border-left: 4px solid #d4a015;
-    padding: 16px 24px;
-    margin: 16px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .6);
-    color: #eaeaea;
-  }
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
+      color: #fff;
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .timeline-item h4 {
-    margin-top: 0;
-    color: #ffffff;
-  }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 160, 21, .1) 0%, transparent 70%);
+    }
 
-  /* Partner Section */
-  .partner-logo-section {
-    background: #0b0b0b;
-    padding: 40px;
-    text-align: center;
-    border: 2px solid #d4a015;
-    border-radius: 10px;
-    margin: 30px 0;
-    color: #eaeaea;
-  }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
 
-  .partner-logo {
-    max-width: 200px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
-  }
+    .hero h1 {
+      font-size: 3.4em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
+      background: linear-gradient(135deg, #fff 0%, #d4a015 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-  .csr-highlight {
-    background: linear-gradient(135deg, #0b1a10 0%, #07120b 100%);
-    border-left: 5px solid #4caf50;
-    padding: 25px;
-    margin: 25px 0;
-    border-radius: 8px;
-    color: #dff6e6;
-  }
+    .hero h2 {
+      font-size: 2em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      border: none;
+    }
 
-  .csr-highlight h3 {
-    color: #a6f0b4;
-    margin-top: 0;
-  }
-</style>
+    .subtitle {
+      font-size: 1.25em;
+      color: #d4a015;
+      opacity: .95;
+    }
+
+    /* Nav */
+    .nav {
+      background: #2c3544;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+      border-top: 3px solid #d4a015;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .3s, border .3s;
+      padding: 5px 10px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #d4a015;
+      border-bottom-color: #d4a015;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 40px;
+      border-bottom: 1px solid #333;
+      /* darker divider for dark background */
+    }
+
+    section:nth-child(even) {
+      background: transparent;
+      /* keep consistent dark look */
+    }
+
+    h2 {
+      font-size: 2.5em;
+      color: #ffffff;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #d4a015;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.8em;
+      color: #ffffff;
+      margin: 30px 0 15px;
+    }
+
+    h4 {
+      font-size: 1.25em;
+      color: #ffffff;
+      margin: 18px 0 10px;
+    }
+
+    p,
+    li {
+      margin-bottom: 12px;
+      font-size: 1.05em;
+      color: #e6e6e6;
+      /* readable body text on black */
+    }
+
+    ul {
+      margin-left: 30px;
+    }
+
+    /* Grids */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .info-card {
+      background: #0b0b0b;
+      /* dark card background */
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .6);
+      border-top: 4px solid #d4a015;
+      transition: transform .3s;
+      color: #eaeaea;
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(212, 160, 21, .12);
+    }
+
+    /* Highlight */
+    .highlight-box {
+      background: linear-gradient(135deg, #111111 0%, #0b0b0b 100%);
+      border-left: 5px solid #d4a015;
+      padding: 22px;
+      margin: 22px 0;
+      border-radius: 6px;
+      color: #f5f5f5;
+    }
+
+    .key-message {
+      background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
+      color: #d4a015;
+      padding: 18px;
+      border-radius: 10px;
+      font-size: 1.15em;
+      font-weight: 700;
+      margin: 16px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .6);
+      border: 2px solid #d4a015;
+    }
+
+    .accent-text {
+      color: #d4a015;
+      font-weight: 700;
+    }
+
+    /* Tables */
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 26px 0;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, .6);
+      color: #eaeaea;
+    }
+
+    .budget-table th {
+      background: #2c3544;
+      color: #fff;
+      padding: 14px;
+      text-align: left;
+      font-size: 1.05em;
+      border-bottom: 3px solid #d4a015;
+    }
+
+    .budget-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #222;
+      color: #ddd;
+    }
+
+    .budget-table tr:hover {
+      background: #0f0f0f;
+    }
+
+    .budget-table .total-row {
+      background: #2c3544;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .budget-table .total-row td {
+      border-bottom: 3px solid #d4a015;
+    }
+
+    /* Sponsor cards */
+    .sponsor-tier {
+      background: #0b0b0b;
+      border: 2px solid #2b2b2b;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 18px 0;
+      transition: all .3s;
+      color: #eaeaea;
+    }
+
+    .sponsor-tier:hover {
+      border-color: #d4a015;
+      box-shadow: 0 5px 20px rgba(212, 160, 21, .12);
+    }
+
+    .sponsor-tier.platinum {
+      border-color: #e5e4e2;
+      background: linear-gradient(135deg, #0f0f0f 0%, #0b0b0b 100%);
+      border-width: 3px;
+    }
+
+    .sponsor-tier.gold {
+      border-color: #d4a015;
+      background: linear-gradient(135deg, #0f0f05 0%, #0b0b00 100%);
+      border-width: 3px;
+    }
+
+    .sponsor-tier.silver {
+      border-color: #c0c0c0;
+      background: linear-gradient(135deg, #0f0f0f 0%, #0b0b0b 100%);
+    }
+
+    .sponsor-tier.bronze {
+      border-color: #cd7f32;
+      background: linear-gradient(135deg, #0f0b07 0%, #0b0603 100%);
+    }
+
+    .tier-header {
+      font-size: 1.6em;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .tier-price {
+      color: #d4a015;
+      font-weight: 800;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #2c3544 0%, #1a1f2e 100%);
+      color: #fff;
+      text-align: center;
+      padding: 60px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(135deg, #d4a015 0%, transparent 100%);
+      clip-path: polygon(0 0, 100% 100%, 0 100%);
+      opacity: .1;
+    }
+
+    .cta-section h2 {
+      color: #fff;
+      border: none;
+    }
+
+    .footer-band {
+      background: linear-gradient(90deg, #d4a015 0%, #2c3544 100%);
+      height: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2em;
+      }
+
+      section {
+        padding: 40px 20px;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      .nav {
+        padding: 15px 20px;
+      }
+
+      .letterhead {
+        padding: 20px;
+      }
+
+      .contact-header {
+        font-size: .85em;
+      }
+
+      .letterhead-content img {
+        vertical-align: middle;
+      }
+    }
+
+    /* Gallery */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin: 22px 0;
+    }
+
+    .image-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .6);
+      background: #0a0a0a;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .timeline-item {
+      background: #0b0b0b;
+      border-left: 4px solid #d4a015;
+      padding: 16px 24px;
+      margin: 16px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .6);
+      color: #eaeaea;
+    }
+
+    .timeline-item h4 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    /* Partner Section */
+    .partner-logo-section {
+      background: #0b0b0b;
+      padding: 40px;
+      text-align: center;
+      border: 2px solid #d4a015;
+      border-radius: 10px;
+      margin: 30px 0;
+      color: #eaeaea;
+    }
+
+    .partner-logo {
+      max-width: 200px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .csr-highlight {
+      background: linear-gradient(135deg, #0b1a10 0%, #07120b 100%);
+      border-left: 5px solid #4caf50;
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 8px;
+      color: #dff6e6;
+    }
+
+    .csr-highlight h3 {
+      color: #a6f0b4;
+      margin-top: 0;
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
     <!-- Letterhead -->
-    <div class="letterhead">
+    <div class="letterhead" style="flex-direction: column; align-items: flex-start;">
       <div class="letterhead-content">
-        <div class="logo-text">AURIC <span>ENTERTAINMENT</span></div>
-        <div class="contact-header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <img src="AuricLogo.png" alt="Auric Entertainment Logo" style="height:100px; width:auto;">
+          <div class="logo-text">AURIC <span>ENTERTAINMENT</span></div>
+        </div>
+        <div class="contact-header" style="margin-top: 10px; text-align: right;">
           <div class="contact-item">📧 info@auricentertainment.my</div>
           <div class="contact-item">📞 +60 17-832 8742</div>
           <div class="contact-item">🌐 www.auricentertainment.my</div>
@@ -501,6 +527,8 @@
         </div>
         <p></p>
         <p class="subtitle">A Historic Musical Celebration for the Sri Lankan & South Asian Community</p>
+        <p style="margin-top: 8px; font-size: 1.05em;"><strong>In collaboration with the Sri Lankan High Commission in
+            Malaysia</strong></p>
         <p style="margin-top: 20px; font-size: 1.15em;">2nd May 2026 | Kuala Lumpur</p>
       </div>
     </header>
@@ -541,71 +569,108 @@
           Malaysia</strong>, exclusively for the Sri Lankan and South Asian community.
       </div>
 
-      <p>This landmark event promises to be an unforgettable celebration of music, culture, and community, bringing together Sri Lankans and South Asian music lovers across Malaysia and Singapore.</p>
+      <p style="margin-top:10px;"><strong>Diplomatic Collaboration:</strong> This concert is proudly organized in
+        <strong>collaboration with the Sri Lankan High Commission in Malaysia</strong>, and with our community partner
+        <strong>Sri Lankan Workers Welfare Society (SLWWS)</strong>, strengthening cultural and diplomatic ties between
+        Sri Lanka and Malaysia.
+      </p>
+
+      <p>This landmark event promises to be an unforgettable celebration of music, culture, and community, bringing
+        together Sri Lankans and South Asian music lovers across Malaysia and Singapore.</p>
     </section>
 
     <!-- CSR Partnership -->
+
+
     <section id="csr-partnership">
-      <h2>CSR Partnership & Social Impact</h2>
-      
-            <div class="partner-logo-section">
-        <h3>In Partnership With</h3>
-        <img src="slwws.png" alt="Sri Lankan Workers Welfare Society Logo" class="partner-logo">
-        <h4>Sri Lankan Workers Welfare Society (SLWWS)</h4>
+      <h2>Strategic Collaboration & CSR Partnership</h2>
 
-       <p style="margin-top:8px; color: #e6e6e6;"><strong>Payment flow:</strong> All ticket sales will be collected directly into SLWWS's bank account. After the event, SLWWS will deduct <strong>RM 45,000</strong> for CSR commitments and transfer the remaining balance to Auric Entertainment.</p>
-     <p><em>"With You Always"</em></p>
-      </div>
-
-      <p>We are proud to partner with the <strong>Sri Lankan Workers Welfare Society (SLWWS)</strong>, a community organization dedicated to supporting Sri Lankan expatriates in Malaysia and making meaningful contributions to communities in Sri Lanka.</p>
-
-      <div class="csr-highlight">
-        <h3>Proven Track Record: Rhythms of Hope</h3>
-        <p>SLWWS successfully organized <strong>"Rhythms of Hope - Marians Live in KL"</strong>, a charity dinner and dance event held on <strong>4th November 2023</strong>, in collaboration with the Sri Lankan High Commission in Malaysia.</p>
-        
-        <h4 style="margin-top: 20px;">Project Impact:</h4>
-        <p>The event funded a complete <strong>Reverse Osmosis (RO) Water Plant</strong> in <strong>Pompe Madu, Vavuniya, Sri Lanka</strong>, as part of the <strong>Manusath Derana</strong> charity program conducted by Derana TV Sri Lanka.</p>
-        
-        <ul style="margin-top: 15px;">
-          <li><strong>Operational Since:</strong> 14th June 2024</li>
-          <li><strong>Community Served:</strong> Previously underserved community now has access to clean drinking water</li>
-          <li><strong>Lasting Impact:</strong> Sustainable water solution benefiting hundreds of families</li>
-        </ul>
-
-        <p style="margin-top: 15px; font-style: italic; color: #2e7d32;">
-          <strong>Watch the Project Video:</strong> <a href="https://www.facebook.com/100093037146288/videos/1238555101249156" target="_blank" style="color: #1976d2;">Facebook Video Link</a>
+      <div class="partner-logo-section">
+        <h3>In Collaboration With</h3>
+        <img src="sl_high_commission - Edited.png" alt="Sri Lankan High Commission in Malaysia Logo"
+          class="partner-logo">
+        <h4>Sri Lankan High Commission in Malaysia</h4>
+        <p style="margin-top:8px; color:#e6e6e6;">Auric Entertainment is honoured to collaborate with the <strong>Sri
+            Lankan High Commission in Malaysia</strong> to present this cultural milestone and extend its social impact.
         </p>
       </div>
 
-      <h3>Our CSR Commitment for Hadagasma 2026</h3>
-<div class="highlight-box">
-  <p><strong>CSR Deduction: RM 45,000</strong></p>
- <p>All ticket sales will be collected into SLWWS's account. SLWWS will withhold <strong>RM 45,000</strong> to fund CSR projects and will remit the remaining ticket proceeds to Auric Entertainment after the event.</p>
+      <div class="partner-logo-section">
+        <h3>Community Partner</h3>
+        <img src="slwws.png" alt="Sri Lankan Workers Welfare Society (SLWWS) Logo" class="partner-logo">
+        <h4>Sri Lankan Workers Welfare Society (SLWWS)</h4>
+        <p style="margin-top:8px; color:#e6e6e6;">Our community partner for on‑ground engagement and CSR execution.
+          SLWWS will coordinate donation logistics and documentation.</p>
       </div>
 
+      <div class="partner-logo-section">
+        <h3>CSR Beneficiary</h3>
+        <img src="help-apeksha-logo.svg" alt="Apeksha Hospital (Maharagama) Logo" class="partner-logo">
+        <h4>Apeksha Hospital (National Cancer Institute), Maharagama — Sri Lanka</h4>
+        <p style="margin-top:8px; color:#e6e6e6;">A <strong>fixed donation of RM 45,000</strong> from event proceeds
+          will be contributed to <strong>Apeksha Hospital (Maharagama)</strong> to support patient care and oncology
+          services.</p>
+      </div>
+
+      <div class="csr-highlight">
+        <h3>Proven CSR Track Record — “Rhythms of Hope” Project</h3>
+        <p>Our community partner, <strong>Sri Lankan Workers Welfare Society (SLWWS)</strong>, has a strong history of
+          executing successful social impact projects.</p>
+        <p>In <strong>November 2023</strong>, SLWWS organized the <strong>“Rhythms of Hope – Marians Live in
+            KL”</strong> charity dinner and dance in collaboration with the Sri Lankan High Commission in Malaysia.</p>
+        <ul style="margin-top:10px;">
+          <li>✅ Funded a complete <strong>Reverse Osmosis (RO) Water Plant</strong> installation in <strong>Pompe Madu,
+              Vavuniya, Sri Lanka</strong>.</li>
+          <li>✅ Executed under the <strong>Manusath Derana</strong> charity initiative by Derana TV, providing clean
+            water access to over 400 families.</li>
+          <li>✅ Project successfully handed over on <strong>14th June 2024</strong>.</li>
+        </ul>
+        <p style="margin-top:10px; font-style:italic; color:#7fd27f;">
+          <strong>Watch the project video:</strong>
+          <a href="https://www.facebook.com/100093037146288/videos/1238555101249156" target="_blank"
+            style="color:#4caf50;">
+            Facebook Video Link
+          </a>
+        </p>
+      </div>
+
+      <div class="csr-highlight">
+        <h3>Donation Structure & Transparency</h3>
+        <ul>
+          <li><strong>Fixed CSR Amount:</strong> RM 45,000 will be allocated from event proceeds as a charitable
+            donation.</li>
+          <li><strong>Flow & Governance:</strong> Donation facilitation and handover will be organised by
+            <strong>SLWWS</strong>, carried out <strong>with the knowledge and support of the Sri Lankan High Commission
+              in Malaysia</strong>, ensuring proper protocol and records.
+          </li>
+          <li><strong>Reporting:</strong> A post‑event CSR report (remittance summary and acknowledgement from Apeksha
+            Hospital) will be shared with partners and sponsors.</li>
+        </ul>
+      </div>
       <div class="info-grid">
         <div class="info-card">
-          <h4>Social Impact</h4>
-          <p>Supporting vital infrastructure and welfare projects in underserved communities in Sri Lanka</p>
+          <h4>Community Impact</h4>
+          <p>Contributing directly to life‑saving treatment and services at Sri Lanka’s leading oncology hospital.</p>
         </div>
         <div class="info-card">
-          <h4>Community Building</h4>
-          <p>Strengthening ties between Malaysian and Sri Lankan communities through meaningful collaboration</p>
+          <h4>Diplomatic Goodwill</h4>
+          <p>Strengthening Sri Lanka–Malaysia people‑to‑people ties through cultural diplomacy.</p>
         </div>
         <div class="info-card">
-          <h4>Transparent Partnership</h4>
-          <p>Fixed donation commitment ensures accountability and clear expectations for all stakeholders</p>
+          <h4>Accountability</h4>
+          <p>Clear CSR amount and documented handover ensure transparency for sponsors and stakeholders.</p>
         </div>
         <div class="info-card">
-          <h4>Sustainable Development</h4>
-          <p>Contributing to long-term solutions that improve quality of life for Sri Lankan communities</p>
+          <h4>Sustainable Outreach</h4>
+          <p>Building a repeatable framework for future cultural events with measurable social outcomes.</p>
         </div>
       </div>
 
-      <p style="margin-top: 25px; font-weight: 600; color: #2c3544;">
-        By attending Hadagasma 2026, every ticket holder becomes part of this meaningful social impact initiative, combining world-class entertainment with community development.
-      </p>
+      <p style="margin-top: 20px; font-weight:600;">Every ticket purchased helps Apeksha Hospital continue its vital
+        mission for cancer patients in Sri Lanka.</p>
     </section>
+
+
 
     <!-- Details -->
     <section id="event-details">
@@ -669,9 +734,12 @@
 
       <h3>3. Create Meaningful Social Impact</h3>
       <ul>
-        <li>To contribute RM 45,000 towards SLWWS's CSR projects supporting underprivileged communities in Sri Lanka.</li>
-        <li>To demonstrate the power of cultural events in driving positive social change and community development.</li>
-        <li>To continue the success of previous initiatives like the Rhythms of Hope water plant project in Vavuniya.</li>
+        <li>To contribute RM 45,000 towards Apeksha Hospital (Maharagama), supporting cancer care and oncology services
+          in Sri Lanka.</li>
+        <li>To demonstrate the power of cultural events in driving positive social change and community development.
+        </li>
+        <li>To continue the success of previous initiatives like the Rhythms of Hope water plant project in Vavuniya.
+        </li>
       </ul>
 
       <h3>4. Promote Youth & Student Engagement</h3>
@@ -828,8 +896,9 @@
 
       <h4>Credibility Building</h4>
       <ul>
-        <li>Press launch event (November 2025) with Sri Lankan High Commission in Malaysia</li>
-        <li>Official endorsements and messages from diplomatic representatives</li>
+        <li>Press launch event with the Sri Lankan High Commission in Malaysia</li>
+        <li>Official endorsements and messages from the Sri Lankan High Commission and other diplomatic representatives
+        </li>
         <li>Professional event management and quality assurance messaging</li>
         <li>Highlight SLWWS's proven track record with Rhythms of Hope success</li>
       </ul>
@@ -1014,7 +1083,8 @@
           <li>Prime Seats: 320</li>
           <li>Regular Seats: 160</li>
         </ul>
-        <p style="margin-top: 15px;"><strong>This tiered strategy ensures fair access across different income groups within the expatriate community while supporting our CSR commitment.</strong></p>
+        <p style="margin-top: 15px;"><strong>This tiered strategy ensures fair access across different income groups
+            within the expatriate community while supporting our CSR commitment.</strong></p>
       </div>
     </section>
 
@@ -1027,8 +1097,10 @@
         <li><strong>Age Restrictions:</strong> Entry is allowed for ages 12 and above. Children under 16 must be
           accompanied by an adult.</li>
         <li><strong>Re-entry Policy:</strong> Once exited, re-entry will not be permitted.</li>
-        <li><strong>Ticket Transfer:</strong> Tickets can be transferred to another person with proper notification to event organizers.</li>
-        <li><strong>Payment Methods:</strong> Online tickets: Online banking, eWallet. All major payment platforms accepted.</li>
+        <li><strong>Ticket Transfer:</strong> Tickets can be transferred to another person with proper notification to
+          event organizers.</li>
+        <li><strong>Payment Methods:</strong> Online tickets: Online banking, eWallet. All major payment platforms
+          accepted.</li>
       </ul>
     </section>
 
@@ -1049,7 +1121,7 @@
     <!-- Budget -->
     <section id="budget">
       <h2>Budget & Revenue</h2>
-      
+
       <h3>Total Estimation Breakdown</h3>
       <table class="budget-table">
         <thead>
@@ -1119,7 +1191,7 @@
             <td>Subtotal</td>
             <td>247,500</td>
           </tr>
-<tr>
+          <tr>
             <td>Contingency / Buffer</td>
             <td>25,000</td>
           </tr>
@@ -1132,9 +1204,12 @@
 
       <div class="csr-highlight">
         <h4>CSR Commitment</h4>
-           <p><strong>Payment Flow & Commitment</strong></p>
-       <p>Ticket sale proceeds will be collected into SLWWS's account. After the event, SLWWS will deduct <strong>RM 45,000</strong> for CSR projects and transfer the remaining ticket revenue to Auric Entertainment as per the agreement.</p>
-     </div>
+        <p><strong>CSR Commitment</strong></p>
+        <p>A fixed <strong>RM 45,000</strong> from event proceeds will be donated to <strong>Apeksha Hospital
+            (Maharagama)</strong>, Sri Lanka. Donation logistics will be <strong>coordinated by SLWWS</strong> with
+          protocol guidance from the <strong>Sri Lankan High Commission in Malaysia</strong>, and full documentation
+          will be maintained for transparency.</p>
+      </div>
 
       <h3>Ticket Revenue Projection</h3>
       <table class="budget-table">
@@ -1251,7 +1326,9 @@
     <!-- Sponsorship -->
     <section id="sponsors">
       <h2>Sponsorship Opportunities</h2>
-      <div class="highlight-box"><strong>Brand Visibility:</strong> Sponsors gain strong brand visibility and community engagement within the Sri Lankan and South Asian diaspora, plus association with a meaningful CSR initiative.</div>
+      <div class="highlight-box"><strong>Brand Visibility:</strong> Sponsors gain strong brand visibility and community
+        engagement within the Sri Lankan and South Asian diaspora, plus association with a meaningful CSR initiative.
+      </div>
 
       <div class="sponsor-tier platinum">
         <div class="tier-header"><span>💎 Platinum Sponsor – Exclusive Title Partner</span><span class="tier-price">RM
@@ -1278,7 +1355,7 @@
           <li>On-screen logo before/after performance</li>
           <li>Brand association with CSR messaging</li>
         </ul> -->
-         <ul>
+        <ul>
           <li>Exclusive Title: "Hadagasma 2026 presented by [Brand]"</li>
           <li>Premium logo on stage, tickets, press & Main LED Screen</li>
           <li>10 Seconds video on Main Screen and Other 7 screens</li>
@@ -1298,7 +1375,7 @@
           <li>Acknowledged as Silver Sponsor</li>
           <li>Social media mentions with CSR connection</li>
         </ul> -->
-            <ul>
+        <ul>
           <li>Exclusive Title: "Hadagasma 2026 presented by [Brand]"</li>
           <li>Premium logo on stage, tickets, press & Main LED Screen</li>
           <li>10 Seconds video 7 screens</li>
@@ -1317,7 +1394,7 @@
           <li>2 Premium seats</li>
           <li>Verbal appreciation during event</li>
         </ul> -->
-            <ul>
+        <ul>
           <li>Exclusive Title: "Hadagasma 2026 presented by [Brand]"</li>
           <li>Premium logo on stage, tickets, press & Main LED Screen</li>
           <li>Logo display on 7 screens</li>
@@ -1327,8 +1404,9 @@
       </div>
 
       <div class="sponsor-tier">
-        <div class="tier-header"><span>🍔 Official Food Partner</span><span class="tier-price">RM 10,000 × 2</span></div>
-             <ul>
+        <div class="tier-header"><span>🍔 Official Food Partner</span><span class="tier-price">RM 10,000 × 2</span>
+        </div>
+        <ul>
           <li>Exclusive Title: "Hadagasma 2026 presented by [Brand]"</li>
           <li>Premium logo on stage, tickets, press & Main LED Screen</li>
           <li>10 Seconds video 7 screens</li>
@@ -1337,7 +1415,7 @@
           <li>VIP 2 seats + backstage meet & greet with BNS</li>
         </ul>
       </div>
-      
+
       <!-- <div class="sponsor-tier">
         <div class="tier-header"><span>🌟 Community Sponsor</span><span class="tier-price">RM 5,000 × Multiple</span>
         </div>
@@ -1353,7 +1431,8 @@
         <h4>Why Sponsor Hadagasma 2026?</h4>
         <ul>
           <li><strong>Captive Audience:</strong> 1,000+ engaged Sri Lankan and South Asian community members</li>
-          <li><strong>Positive Brand Association:</strong> Align your brand with cultural celebration and social impact</li>
+          <li><strong>Positive Brand Association:</strong> Align your brand with cultural celebration and social impact
+          </li>
           <li><strong>CSR Alignment:</strong> Support SLWWS's community development projects in Sri Lanka</li>
           <li><strong>Media Coverage:</strong> Extensive press, digital, and social media exposure</li>
           <li><strong>Community Goodwill:</strong> Long-term brand loyalty within expatriate community</li>
@@ -1365,6 +1444,10 @@
     <section id="launch">
       <h2>Event Launch</h2>
       <p>The official launch is scheduled for <strong>16th November 2025</strong>.</p>
+      <p>This launch highlights our collaboration with the <strong>Sri Lankan High Commission in Malaysia</strong>, our
+        <strong>community partnership with SLWWS</strong>, and our <strong>CSR donation to Apeksha Hospital
+          (Maharagama)</strong>.
+      </p>
       <div class="info-grid">
         <div class="info-card">
           <h4>Press & Media Conference</h4>
@@ -1385,7 +1468,8 @@
       </div>
       <div class="highlight-box">
         <h4>Chief Guest</h4>
-        <p>Invitation to <strong>H.E. the High Commissioner of Sri Lanka to Malaysia</strong> as Chief Guest.</p>
+        <p>Invitation to <strong>H.E. the High Commissioner of Sri Lanka to Malaysia</strong> as Chief Guest (subject to
+          confirmation).</p>
         <p><em>(Time and location to be announced)</em></p>
       </div>
 
@@ -1401,27 +1485,18 @@
       </div>
     </section>
 
-      <!-- Gallery -->
+    <!-- Gallery -->
     <section id="gallery">
       <h2>Event Visuals</h2>
       <div class="image-gallery">
-        <div class="image-card"><img
-            src="7.jpg"
-            alt="BNS Performance 1"></div>
-        <div class="image-card"><img
-            src="8.jpg"
-            alt="BNS Performance 2">
+        <div class="image-card"><img src="7.jpg" alt="BNS Performance 1"></div>
+        <div class="image-card"><img src="8.jpg" alt="BNS Performance 2">
         </div>
-        <div class="image-card"><img
-            src="9.jpg"
-            alt="BNS Live Concert"></div>
+        <div class="image-card"><img src="9.jpg" alt="BNS Live Concert"></div>
       </div>
       <div class="image-gallery">
-        <div class="image-card"><img src="10.jpg"
-            alt="Event Venue 1"></div>
-        <div class="image-card"><img
-            src="11.jpg"
-            alt="BNS Stage Performance">
+        <div class="image-card"><img src="10.jpg" alt="Event Venue 1"></div>
+        <div class="image-card"><img src="11.jpg" alt="BNS Stage Performance">
         </div>
         <div class="image-card"><img src="12.jpg" alt="Event Venue 2"></div>
       </div>
@@ -1447,14 +1522,20 @@
         <div class="info-card">
           <h4>Projected Net Revenue</h4>
           <p><strong>RM 248,388+</strong></p>
-          <p style="font-size:.95em;color:#555">Total Revenue = Net Ticket (after 12% PUSPAL and RM 45,000 CSR deduction) + Sponsorship. Example: RM 260,888 (tickets after CSR) + RM 260,000 (sponsors) − RM 272,500 (budget) ≈ RM 248,388. Actuals may vary.
-</p>
+          <p style="font-size:.95em;color:#555">Total Revenue = Net Ticket (after 12% PUSPAL and RM 45,000 CSR
+            deduction) + Sponsorship. Example: RM 260,888 (tickets after CSR) + RM 260,000 (sponsors) − RM 272,500
+            (budget) ≈ RM 248,388. Actuals may vary.
+          </p>
         </div>
       </div>
-<div class="highlight-box" style="margin-top:16px;">
-  <strong>CSR Deduction Note:</strong> SLWWS will retain <strong>RM 45,000</strong> from total ticket proceeds for CSR projects. 
-  The <em>net ticket settlement to Auric Entertainment</em> is therefore <strong>RM 305,888 − RM 45,000 = RM 260,888</strong> (before any other adjustments).
-</div>
+      <div class="highlight-box" style="margin-top:16px;">
+        <strong>CSR Deduction Note:</strong> A fixed <strong>RM 45,000</strong> from event proceeds will be donated to
+        <strong>Apeksha Hospital (Maharagama)</strong> in Sri Lanka. The donation facilitation and documentation will be
+        coordinated by <strong>SLWWS</strong> with oversight and support from the <strong>Sri Lankan High Commission in
+          Malaysia</strong>.
+        The <em>net ticket settlement to Auric Entertainment</em> is therefore <strong>RM 305,888 − RM 45,000 = RM
+          260,888</strong> (before any other adjustments).
+      </div>
 
 
     </section>
